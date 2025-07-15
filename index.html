@@ -299,6 +299,26 @@
       
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">  
         
+
+        <div>
+          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
+            New SOTA on <b>MiniF2F</b></p>
+          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">
+            <strong style="color: #ef4444;">+8.0% <span style="font-size: 0.6em;">Pass@32</span></strong>
+          <p style="font-size: 0.875rem; color: #6b7280;">
+            Our flagship 32B model significantly outperforms DeepSeek-Prover-V2-671B.</p>
+        </div>
+
+
+        <div>
+          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
+            Small But <b>Mighty</b></p>
+          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">
+            <strong style="color: #ef4444;"> 8B &gtrsim; 671B</strong></p>
+          <p style="font-size: 0.875rem; color: #6b7280;">
+            Our small 8B model matches prior SOTA 671B model at Pass@32.</p>
+        </div>
+        
         <div>
           <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
             #1 on <b>PutnamBench</b></p>
@@ -307,26 +327,7 @@
           <p style="font-size: 0.875rem; color: #6b7280;">
             Securing the top rank on the leaderboard.</p>
         </div>
-
-
-               
-        <div>
-          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
-            New SOTA on <b>MiniF2F</b></p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">
-            <strong style="color: #ef4444;">+5.7%</strong>
-          <p style="font-size: 0.875rem; color: #6b7280;">
-            Achieving 88.1% beating DeepSeek-Prover-V2-671B's 82.4% by Pass@32.</p>
-        </div>
-
-        <div>
-          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
-            SOTA small model on <b>MiniF2F</b></p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">
-            <strong style="color: #ef4444;"> 8B > 671B</strong></p>
-          <p style="font-size: 0.875rem; color: #6b7280;">
-            Our 8B model is better than the 671B DeepSeek-Prover on miniF2F Pass@32.</p>
-        </div>
+        
 
       </div>
     </div>
@@ -339,13 +340,10 @@
           <h2 class="title is-3">Introduction</h2>
           <div class="content has-text-justified">
             <p>
-              We introduce Goedel-Prover-V2, an open-source language model series that achieves state-of-the-art performance in automated formal proof generation. Our models build on the standard expert iteration and reinforcement learning pipeline, with three novel methodologies: (1) scaffolding data synthesis, which creates and augments intermediate problems to bridge the gap between simple and difficult proofs; (2) compiler-guided self-correction, where the model is trained to iteratively correct its own proofs using lean compiler feedback, mimicking human problem-solving; and (3) model averaging. 
+              We introduce Goedel-Prover-V2, an open-source language model series that sets a new state-of-the-art in automated formal proof generation. Built on the standard expert iteration and reinforcement learning pipeline, our approach incorporates three key innovations: (1) <strong>Scaffolded data synthesis</strong>: We generate synthetic proof tasks of increasing difficulty to progressively train the model, enabling it to master increasingly complex theorems; (2) <strong>Verifier-guided self-correction</strong>: The model learns to iteratively revise its own proofs by leveraging feedback from Lean’s compiler, closely mimicking how humans refine their work; (3) <strong>Model averaging</strong>: We combine multiple model checkpoints to improve robustness and overall performance.
             </p>
             <p>
-              Our small model, Goedel-Prover-V2-8B, reaches 83.0% on MiniF2F test set at Pass@32, matching the performance of DeepSeek-Prover-V2-671B while being nearly 100 times smaller in model size.  Our flagship model, Goedel-Prover-V2-32B, achieves 88.0% on MiniF2F at Pass@32 and 90.4% with additional two rounds of self-correction (only increasing max output length from 32K to 40K), outperforming prior SOTA DeepSeek-Prover-V2-671B and concurrent work Kimina-Prover-72B by a large margin. Additionaly, Goedel-Prover-V2-32B solves 57 problems on PutnamBench with 32 sample budget and 2 rounds of self-correction per sample, securing the 1st on the leaderboard by beating DeepSeek-Prover-V2-671B's 47 by doing Pass@1024.
-            </p>
-            <p>
-              This model is being released to aid other open-source projects, including those geared towards the upcoming IMO competition. A full paper with all details will be released in the coming weeks.
+              Our small model, Goedel-Prover-V2-8B, reaches 83.0% on MiniF2F test set at Pass@32, matching the performance of prior state-of-the-art DeepSeek-Prover-V2-671B while being nearly 100 times smaller in model size.  Our flagship model, Goedel-Prover-V2-32B, achieves 88.0% on MiniF2F at Pass@32 on standard mode and 90.4% on self-correction mode, outperforming prior SOTA DeepSeek-Prover-V2-671B and concurrent work Kimina-Prover-72B by a large margin. Additionaly, our flagship model with self-correction solves 64 problems on PutnamBench at Pass@64, securing the 1st on the leaderboard surpassing DeepSeek-Prover-V2-671B's record of solving 47 problems by Pass@1024.
             </p>
           </div>
         </div>
@@ -356,6 +354,9 @@
   <section class="section">
     <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Benchmark Performance</h2>
+            <p>
+                <strong>Self-correction mode</strong>: Our model improves proof quality by first generating an initial candidate and then using Lean compiler feedback to iteratively revise it. We perform two rounds of self-correction, which remain computationally efficient—the total output length (including the initial proof and two revisions) increases only modestly from the standard 32K to 40K tokens.
+            </p>
         <figure class="results-figure">
           <div class="columns is-centered is-vcentered">
             <div class="column"> 
@@ -374,15 +375,16 @@
             </div> -->
           </div>
           <figcaption>
-              <strong>Figure 1</strong>: <em>Pass@32 performance on MiniF2F, PutnamBench, and our new FoMOBench containing 360 IMO-level problems.</em>
+              <strong>Figure 1</strong>: <em>Pass@32 performance on MiniF2F, PutnamBench, and our new MathOlympiadBench containing 360 IMO-level problems.</em>
           </figcaption>
         </figure>
         <div class="content has-text-justified">
             <p>
-                The charts above demonstrate the state-of-the-art performance of Goedel-Prover-V2. Goedel-Prover-V2 (self-correction) indicates that the model first do full proof generation and then correct the proof according to the lean compilation feedback.  <strong>Goedel-Prover-V2 (self-correction) only increases the max output length from 32K to 40K over other models.</strong> 
-                <strong>(Left)</strong> On the widely-used MiniF2F benchmark, our 8B model achieves 83.0%, matching much larger models, while our 32B model reaches 88.0% (90.4% with self-correction), outperforming all previous models.
-                <strong>(Middle)</strong> On the challenging PutnamBench, our 32B model solves 43 problems, a significant leap over the previous best of 23.
-                <strong>(Right)</strong> On our newly curated FoMOBench, which contains 360 IMO-level problems, our 32B model solves 73 problems, surpassing DeepSeek-Prover-V2-671B's 50.
+                The charts above demonstrate the state-of-the-art performance of Goedel-Prover-V2. We report all numbers at Pass@32: (1) Across all three datasets, our flagship 32B model, in both standard and self-correction mode, significantly outperforms prior state-of-the-art DeepSeek-Prover-V2-671B and Kimina-Prover-72B; (2) on miniF2F, our 8B model matches the performance of DeepSeek-Prover-V2-671B while being 100 times smaller in model size.
+<!--                 On minif2f, Our 8B model matches the performance of prior state-of
+                <strong>(Left)</strong> On the widely-used MiniF2F benchmark, our small 8B model achieves 83.3%, matching much larger models, while our 32B model reaches 88.0% (90.4% with self-correction), outperforming all previous models.
+                <strong>(Middle)</strong> On the challenging PutnamBench, our 32B model solves 43 and 57 problems in the standard and self-correction model respectively---a significant leap over the previous best of 22 problems.
+                <strong>(Right)</strong> On our newly curated FoMOBench, which contains 360 IMO-level problems, our 32B model solves 73 problems, surpassing DeepSeek-Prover-V2-671B's 50. -->
             </p>
         </div>
 
@@ -396,25 +398,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1</td><td><strong>Goedel-Prover-V2-32B (two rounds of self-correction)</strong></td><td><strong>64</strong></td><td><strong>Pass@64</strong></td></tr>
-                <tr><td>1</td><td><strong>Goedel-Prover-V2-32B (two rounds of self-correction)</strong></td><td><strong>57</strong></td><td><strong>Pass@32</strong></td></tr>
-                <tr><td>1</td><td><strong>Goedel-Prover-V2-32B </strong></td><td><strong>43</strong></td><td><strong>Pass@32</strong></td></tr>
+                <tr><td>1</td><td><strong>Goedel-Prover-V2-32B (self-correction mode)</strong></td><td><strong>64</strong></td><td><strong>Pass@64</strong></td></tr>
+                <tr><td>1</td><td><strong>Goedel-Prover-V2-32B (self-correction mode)</strong></td><td><strong>57</strong></td><td><strong>Pass@32</strong></td></tr>
+                <tr><td>1</td><td><strong>Goedel-Prover-V2-32B </strong></td><td><strong>44</strong></td><td><strong>Pass@32</strong></td></tr>
 
                 <tr><td>2</td><td>DeepSeek‑Prover‑V2-671B</td><td>47</td><td>pass@1024</td></tr>
                 <tr><td>2</td><td>DeepSeek‑Prover‑V2-671B</td><td>22</td><td>pass@32</td></tr>
                 <tr><td>3</td><td>DSP+</td><td>23</td><td>pass@128</td></tr>
                 <tr><td>4</td><td>Kimina‑Prover‑7B‑Distill</td><td>10</td><td>pass@192</td></tr>
+                <tr><td>5</td><td>Self-play Theorem Prover</td><td>8</td><td>pass@3200</td></tr>
+                <tr><td>6</td><td>Goedel-Prover-V1</td><td>7</td><td>pass@512</td></tr>
             </tbody>
         </table>
         <figcaption class="has-text-centered">
-            <strong>Table 1</strong>: <em>PutnamBench leaderboard. Goedel-Prover-V2-32B secures the top rank with significantly less compute than the previous SOTA.  <strong>Goedel-Prover-V2 (self-correction) only increase the max output length from 32K to 40K over other models.</strong> Note that DeepSeek-Prover-V2-671B's score of 47 was achieved with a much larger sample budget (pass@1024).</em>
+            <strong>Table 1</strong>: <em>PutnamBench leaderboard. Goedel-Prover-V2-32B secures the top rank with significantly less compute (pass number) than the previous state-of-the-art.</em>
         </figcaption>
     </div>
   </section>
 
   <section class="section" style="background-color: #fafafa;">
     <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Compelling Scaling Performance</h2>
+        <h2 class="title is-3 has-text-centered">Inference-time Scaling</h2>
         <figure class="results-figure">
           <div class="columns is-centered is-vcentered">
             <div class="column is-half">
@@ -430,9 +434,7 @@
         </figure>
         <div class="content has-text-justified">
             <p>
-                The scaling curves highlight our models' efficiency and effectiveness.
-                <strong>(Left)</strong> The raw performance (Pass@K) shows that both our 8B and 32B models consistently improve as the number of samples (K) increases, demonstrating robust problem-solving capability.
-                <strong>(Right)</strong> The compute-adjusted performance plot further reveals that our models are highly efficient, achieving strong results even at lower compute budgets compared to other models. This underscores the effectiveness of our training methodology.
+                The scaling curves above show that our 32B model consistently outperforms all prior state-of-the-art models across the entire range of inference-time compute budgets.
             </p>
         </div>
     </div>
@@ -442,7 +444,7 @@
     <div class="container is-max-desktop">
         <div class="section-title has-text-centered">
             <h2 class="title is-3">Our Methodology</h2>
-            <p>A cycle of data synthesis, iterative training, and novel refinement techniques.</p>
+            <!-- <p>A cycle of data synthesis, iterative training, and novel refinement techniques.</p> -->
         </div>
         <div class="columns is-multiline is-centered">
             <div class="column is-half">
@@ -451,25 +453,25 @@
                         <p class="icon"><i class="fas fa-sync-alt"></i></p>
                         <h3>Expert Iteration & RL</h3>
                     </div>
-                    <p>We follow a proven pipeline: formalizing problems, generating and verifying proofs, and using the new, successful proofs to train the next generation of models, further enhanced by reinforcement learning.</p>
+                    <p>We follow the standard pipeline: formalizing problems, generating and verifying proofs, and using newly discovered correct proofs to train the next generation of models, with reinforcement learning providing additional improvements.</p>
                 </div>
             </div>
             <div class="column is-half">
                 <div class="method-card">
                     <div class="is-flex is-align-items-center mb-3">
                         <p class="icon"><i class="fas fa-layer-group"></i></p>
-                        <h3>Data Synthesis for Curriculum</h3>
+                        <h3>Scafforded Data Synthesis</h3>
                     </div>
-                    <p>To overcome data scarcity, we automatically generate intermediate problems. This creates a smoother difficulty curve, bridging the gap from simple lemmas to complex theorems and providing a denser training signal.</p>
+                    <p>We automatically generate intermediate-level problems that bridge the gap between simple solved problems and complex unsolved problems. This results in a smoother difficulty progression and provides a denser, more informative training signal.</p>
                 </div>
             </div>
             <div class="column is-half">
                 <div class="method-card">
                     <div class="is-flex is-align-items-center mb-3">
                         <p class="icon"><i class="fas fa-cogs"></i></p>
-                        <h3>Compiler-Guided Self-Correction</h3>
+                        <h3>Verifier-Guided Self-Correction</h3>
                     </div>
-                    <p>Inspired by human problem-solving, we train the model to use feedback from the Lean compiler to iteratively correct its own proofs, integrating this task into both supervised fine-tuning and reinforcement learning.</p>
+                    <p>We train the model to effectively use the Lean compilation feedback to iteratively correct its own proofs, integrating this task into both supervised fine-tuning and reinforcement learning.</p>
                 </div>
             </div>
             <div class="column is-half">
@@ -478,7 +480,7 @@
                         <p class="icon"><i class="fas fa-random"></i></p>
                         <h3>Model Averaging</h3>
                     </div>
-                    <p>To combat overfitting and loss of diversity in later training stages, we average trained checkpoints with the base model. This simple technique restores diversity and boosts Pass@K performance for larger K.</p>
+                    <p>To prevent the loss of diversity in later training stages, we average trained checkpoints with the base model. This simple technique restores diversity and boosts Pass@K performance for larger K.</p>
                 </div>
             </div>
         </div>
@@ -488,7 +490,7 @@
   <section class="section">
     <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Model & Dataset Downloads</h2>
-        <p class="has-text-centered mb-5">We release our Goedel-Prover-V2 models and the new FoMOBench benchmark to foster future research.</p>
+        <p class="has-text-centered mb-5">We release our Goedel-Prover-V2 models and the new MathOlympiadBench benchmark to foster future research.</p>
         <div class="columns">
             <div class="column">
                 <h4 class="title is-4 has-text-centered">Models</h4>
@@ -509,10 +511,20 @@
                         <tr><th>Dataset</th><th>Download</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>FoMOBench</td><td><a href="https://huggingface.co/datasets/Goedel-LM/FoMOBench" target="_blank">🤗 HuggingFace</a></td></tr>
+                        <tr><td>MathOlympiadBench</td><td><a href="https://huggingface.co/datasets/Goedel-LM/MathOlympiadBench" target="_blank">🤗 HuggingFace</a></td></tr>
                     </tbody>
                 </table>
+
             </div>
+
+        </div>
+        <div class="content has-text-justified">
+            <p>
+              <strong>MathOlympiadBench</strong> (Math Olympiad Bench) comprises human-verified formalizations of Olympiad-level mathematical competition problems, sourced from Compfiles and IMOSLLean4 repository. MathOlympiadBench contains 360 problems, including 158 IMO problems from 1959 to 2024, 131 IMO shortlist problems covering 2006 to 2023, 68 regional mathematical Olympiad problems, and 3 additional mathematical puzzles. 
+            </p>
+            <p>
+              This model is being released to aid other open-source projects, including those geared towards the upcoming IMO competition. A full paper with all details will be released in the coming weeks.
+            </p>
         </div>
     </div>
   </section>
