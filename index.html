@@ -2,42 +2,202 @@
 <html lang="en">
 
 <head>
-  <title>Goedel-Prover</title>
+  <title>Goedel-Prover-V2</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
-  <meta name="description"
-    content="A New Frontier in Open-source Automated Theorem Proving">
-  <meta name="keywords" content="Goedel-Prover, LMM">
+  <meta name="description" content="Goedel-Prover-V2: The Strongest Open-Source Theorem Prover to Date">
+  <meta name="keywords" content="Goedel-Prover, Theorem Prover, Language Model, AI in Math">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Goedel-Prover: A New Frontier in Open-source Automated Theorem Proving</title>
-
-  <link rel="icon" href="./static/images/Goedel-Prover_icon2.png">
-
+  <link rel="icon" href="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/logo.png?raw=true">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <script src="https://kit.fontawesome.com/fff5b27ec1.js" crossorigin="anonymous"></script>
-  <!-- <script src="https://kit.fontawesome.com/eaf1856e6f.js" crossorigin="anonymous"></script> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    .hero {
+      background-color: #f8f9fa;
+    }
+    
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+    }
+
+    .publication-subtitle {
+       font-family: 'Google Sans', sans-serif;
+    }
+
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+    }
+    
+    .author-block {
+      display: inline-block;
+      margin: 0.1rem 0.5rem;
+    }
+    
+    .affiliations {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .publication-links {
+      margin-top: 1.5rem;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-size: 1rem;
+      border-radius: 999em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .badge:hover {
+      background: #4a4a4a;
+      transform: translateY(-2px);
+    }
+    .badge svg,
+    .badge .emoji {
+      width: 1.2em;
+      height: 1.2em;
+      margin-right: 0.5em;
+      fill: currentColor;
+    }
+
+    .key-achievements {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 2.5rem;
+      box-shadow: 0 8px 16px rgba(10,10,10,0.05);
+      border: 1px solid #eee;
+    }
+    .key-achievements h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      color: #1f2937;
+    }
+    .achievement-item {
+      text-align: center;
+      padding: 1rem;
+    }
+    .achievement-item .icon {
+      font-size: 2.5rem;
+      color: #3b82f6;
+      margin-bottom: 1rem;
+    }
+    .achievement-item h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+    .achievement-item p {
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        margin-bottom: 1rem;
+    }
+    
+    .section-title p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .results-figure {
+      margin: 2rem 0;
+    }
+    .results-figure img {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
+    .results-figure figcaption {
+      text-align: center;
+      font-size: 0.9em;
+      margin-top: 1rem;
+      color: #555;
+    }
+    
+    .method-card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border: 1px solid #e5e7eb;
+      height: 100%;
+    }
+    
+    .method-card .icon {
+      font-size: 1.75rem;
+      color: #3b82f6;
+      margin-right: 1rem;
+    }
+    
+    .method-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    
+    .downloads-table {
+      width: 100%;
+      margin-top: 1.5rem;
+      border-collapse: collapse;
+    }
+    .downloads-table th, .downloads-table td {
+      padding: 0.75rem 1rem;
+      border: 1px solid #e5e7eb;
+    }
+    .downloads-table th {
+      background-color: #f9fafb;
+      font-weight: 600;
+    }
+    
+    .leaderboard-table {
+        margin: 2rem auto;
+        width: 80%;
+    }
+    
+    .footer {
+      background-color: #363636;
+      color: #fff;
+    }
+    
+    .footer a {
+      color: #00d1b2;
+    }
+
+  </style>
 </head>
 
 <body>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-logo" href="#">
-          Goedel-Prover-V2
-        </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -74,1219 +234,272 @@
               <a href="http://blog.goedel-prover.com" style="text-decoration: none; color: inherit;">The Strongest Open-Source Theorem Prover to Date</a>
             </h2>
             <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://linyongver.github.io/Website/" style="text-decoration: none; color: inherit;">Yong Lin</a><sup>*, 1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://shangetang.github.io/" style="text-decoration: none; color: inherit;">Shange Tang</a><sup>*, 1, 3</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://lyubh.cn/" style="text-decoration: none; color: inherit;">Bohan Lyu</a><sup>*, 2</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://ziranyang0.github.io/" style="text-decoration: none; color: inherit;">Ziran Yang</a><sup>*, 1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://web.math.princeton.edu/~jc1220/" style="text-decoration: none; color: inherit;">Jui-Hui Chung</a><sup>*, 1</sup>
-              </span>
+              <span class="author-block"><a href="https://linyongver.github.io/Website/" style="text-decoration: none; color: inherit;">Yong Lin</a><sup>*, 1</sup></span>
+              <span class="author-block"><a href="https://shangetang.github.io/" style="text-decoration: none; color: inherit;">Shange Tang</a><sup>*, 1, 3</sup></span>
+              <span class="author-block"><a href="https://lyubh.cn/" style="text-decoration: none; color: inherit;">Bohan Lyu</a><sup>*, 2</sup></span>
+              <span class="author-block"><a href="https://ziranyang0.github.io/" style="text-decoration: none; color: inherit;">Ziran Yang</a><sup>*, 1</sup></span>
+              <span class="author-block"><a href="https://web.math.princeton.edu/~jc1220/" style="text-decoration: none; color: inherit;">Jui-Hui Chung</a><sup>*, 1</sup></span>
               <br>
-              <span class="author-block">
-                <a href="https://hyzhao.me/" style="text-decoration: none; color: inherit;">Haoyu Zhao</a><sup>*, 1</sup>
-              </span>
-              <span class="author-block">
-                <a style="text-decoration: none; color: inherit;">Lai Jiang</a><sup>1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=9jts-VQAAAAJ&hl=zh-CN" style="text-decoration: none; color: inherit;">Yihan Geng</a><sup>1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://jiaweige0416.github.io/" style="text-decoration: none; color: inherit;">Jiawei Ge</a><sup>1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://jingruo.github.io/" style="text-decoration: none; color: inherit;">Jingruo Sun</a><sup>1</sup>
-              </span>
+              <span class="author-block"><a href="https://hyzhao.me/" style="text-decoration: none; color: inherit;">Haoyu Zhao</a><sup>*, 1</sup></span>
+              <span class="author-block"><a style="text-decoration: none; color: inherit;">Lai Jiang</a><sup>1</sup></span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=9jts-VQAAAAJ&hl=zh-CN" style="text-decoration: none; color: inherit;">Yihan Geng</a><sup>1</sup></span>
+              <span class="author-block"><a href="https://jiaweige0416.github.io/" style="text-decoration: none; color: inherit;">Jiawei Ge</a><sup>1</sup></span>
+              <span class="author-block"><a href="https://jingruo.github.io/" style="text-decoration: none; color: inherit;">Jingruo Sun</a><sup>1</sup></span>
               <br>
-              <span class="author-block">
-                <a href="https://ic-hub.github.io/" style="text-decoration: none; color: inherit;">Jiayun Wu</a><sup>2</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://jirigesi.github.io/" style="text-decoration: none; color: inherit;">Jiri Gesi</a><sup>6</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://www.cs.toronto.edu/~davidj/" style="text-decoration: none; color: inherit;">David Acuna</a><sup>3</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://yangky11.github.io/" style="text-decoration: none; color: inherit;">Kaiyu Yang</a><sup>5</sup>
-              </span>
-              <span class="author-block">
-                <a href="http://www.hongzhoulin.com/" style="text-decoration: none; color: inherit;">Hongzhou Lin</a><sup>6</sup>
-              </span>
+              <span class="author-block"><a href="https://ic-hub.github.io/" style="text-decoration: none; color: inherit;">Jiayun Wu</a><sup>2</sup></span>
+              <span class="author-block"><a href="https://jirigesi.github.io/" style="text-decoration: none; color: inherit;">Jiri Gesi</a><sup>6</sup></span>
+              <span class="author-block"><a href="https://www.cs.toronto.edu/~davidj/" style="text-decoration: none; color: inherit;">David Acuna</a><sup>3</sup></span>
+              <span class="author-block"><a href="https://yangky11.github.io/" style="text-decoration: none; color: inherit;">Kaiyu Yang</a><sup>5</sup></span>
+              <span class="author-block"><a href="http://www.hongzhoulin.com/" style="text-decoration: none; color: inherit;">Hongzhou Lin</a><sup>6</sup></span>
               <br>
-              <span class="author-block">
-                <a href="https://yejinc.github.io/" style="text-decoration: none; color: inherit;">Yejin Choi</a><sup>3, 4</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://www.cs.princeton.edu/~danqic/" style="text-decoration: none; color: inherit;">Danqi Chen</a><sup>1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://www.cs.princeton.edu/~arora/" style="text-decoration: none; color: inherit;">Sanjeev Arora</a><sup>1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://sites.google.com/view/cjin/home" style="text-decoration: none; color: inherit;">Chi Jin</a><sup>*, 1</sup>
-              </span>
+              <span class="author-block"><a href="https://yejinc.github.io/" style="text-decoration: none; color: inherit;">Yejin Choi</a><sup>3, 4</sup></span>
+              <span class="author-block"><a href="https://www.cs.princeton.edu/~danqic/" style="text-decoration: none; color: inherit;">Danqi Chen</a><sup>1</sup></span>
+              <span class="author-block"><a href="https://www.cs.princeton.edu/~arora/" style="text-decoration: none; color: inherit;">Sanjeev Arora</a><sup>1</sup></span>
+              <span class="author-block"><a href="https://sites.google.com/view/cjin/home" style="text-decoration: none; color: inherit;">Chi Jin</a><sup>*, 1</sup></span>
             </div>
-            <div class="affiliations" style="margin-top: 1rem;">
-                <p> <sup>*</sup>Core Contributer, <sup>1</sup>Princeton University, <sup>2</sup>Tsinghua University, <sup>3</sup>NVIDIA, <sup>4</sup>Stanford University, <sup>5</sup>Meta</p>, <sup>6</sup>Amazon</p>
+            <div class="affiliations">
+                <p> <sup>*</sup>Core Contributor, <sup>1</sup>Princeton University, <sup>2</sup>Tsinghua University, <sup>3</sup>NVIDIA, <sup>4</sup>Stanford University, <sup>5</sup>Meta, <sup>6</sup>Amazon</p>
             </div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2502.07640" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://huggingface.co/Goedel-LM/Goedel-Prover-SFT"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon" style="font-size:18px">🤗</span>
-                    <span>HuggingFace</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/Goedel-LM/Goedel-Prover" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-              </div>
+            <div class="badges">
+              <a href="#" class="badge" target="_blank" rel="noopener">
+                <svg viewBox="-64 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"/></svg>
+                <span>arXiv</span>
+              </a>
+              <a href="https://github.com/Goedel-LM/Goedel-Prover-V2" class="badge" target="_blank" rel="noopener">
+                <span class="emoji">🌐</span>
+                <span>Website</span>
+              </a>
+              <a href="https://huggingface.co/Goedel-LM/Goedel-Prover-SFT" class="badge" target="_blank" rel="noopener">
+                <span class="emoji">🤗</span>
+                <span>HuggingFace</span>
+              </a>
+              <a href="https://github.com/Goedel-LM/Goedel-Prover-V2" class="badge" target="_blank" rel="noopener">
+                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32.029,8.345c-13.27,0-24.029,10.759-24.029,24.033c0,10.617 6.885,19.624 16.435,22.803c1.202,0.22 1.64-0.522 1.64-1.16c0-0.569-0.02-2.081-0.032-4.086 c-6.685,1.452-8.095-3.222-8.095-3.222c-1.093-2.775-2.669-3.514-2.669-3.514 c-2.182-1.492,0.165-1.462,0.165-1.462c2.412,0.171 3.681,2.477 3.681,2.477 c2.144,3.672 5.625,2.611 6.994,1.997c0.219-1.553 0.838-2.612 1.526-3.213 c-5.336-0.606-10.947-2.669-10.947-11.877c0-2.623 0.937-4.769 2.474-6.449 c-0.247-0.608-1.072-3.051 0.235-6.36c0,0 2.018-0.646 6.609,2.464c1.917-0.533 3.973-0.8 6.016-0.809c2.041,0.009 4.097,0.276 6.017,0.809c4.588-3.11 6.602-2.464 6.602-2.464c1.311,3.309 0.486,5.752 0.239,6.36c1.54,1.68 2.471,3.826 2.471,6.449c0,9.232-5.62,11.263-10.974,11.858c0.864,0.742 1.632,2.208 1.632,4.451c0,3.212-0.029,5.804-0.029,6.591c0,0.644 0.432,1.392 1.652,1.157c9.542-3.185 16.421-12.186 16.421-22.8c0-13.274 -10.76-24.033-24.034-24.033"/></svg>
+                <span>Code</span>
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  
-    <section class="section">
-      <div class="container" style="margin-bottom: 2vh;">
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <!-- <h2 class="title is-3">🔔News</h2> -->
-            <!-- <div class="content has-text-justified">
-              <p>
-                <b>🔥[2024-09-05] Introducing <a href="https://arxiv.org/abs/2409.02813">Goedel-Prover-Pro</a>, a robust
-                  version of
-                  Goedel-Prover benchmark for multimodal AI evaluation! 🚀</b>
-              </p>
-              <p>
-                <b>🚀[2024-01-31]: We added Human Expert performance on the <a href="#leaderboard">Leaderboard</a>!🌟</b>
-              </p>
-              <p>
-                <b>🔥[2023-12-04]: Our evaluation server for the test set is now available on <a
-                    href="https://eval.ai/web/challenges/challenge-page/2179/overview"><b>EvalAI</b></a>. We welcome all
-                  submissions and look forward to your participation! 😆</b>
-              </p>
-            </div> -->
-            <h2 class="title is-3">Introduction</h2>
-            <div class="content has-text-justified">
-              <p>
-                We introduce Goedel-Prover, an open-source language model that achieves state-of-the-art performance in automated formal proof generation for mathematical problems. A key challenge in this field is the scarcity of formalized mathematical statements and proofs, which we address through the following approaches. First, we train statement formalizers to translate natural language math problems from Numina into the formal language Lean 4, and use an LLM to verify that the formal statements accurately preserve the content of the original problems. This results in a dataset of 1.64 million formal statements. We then iteratively build a large dataset of formal proofs by training a series of provers: each prover is able to prove many statements that the previous ones could not, and these new proofs are added to the training set for the next prover. Despite using only supervised fine-tuning, our final prover (fine-tuned on DeepSeek-Prover-V1.5-Base) significantly outperforms the previous best open-source model, DeepSeek-Prover-V1.5-RL, which uses reinforcement learning (RL). On the miniF2F benchmark, our model achieves a success rate of 57.6% (Pass@32), surpassing DeepSeek-Prover-V1.5-RL by 7.6%. On PutnamBench, Goedel-Prover successfully solves 7 problems (Pass@512), ranking first on the leaderboard. Furthermore, it generates 29.7K formal proofs for Lean Workbook problems, nearly doubling the 15.7K produced by prior work. We provide extensive discussion of our training methodology, highlighting the key design choices that contribute to Goedel-Prover's strong performance. We then explore direct preference optimization (DPO) and other forms of reinforcement learning on top of Goedel-Prover-SFT, improving success to over 60% (Pass@32) on miniF2F. Additionally, we fully open source our code, model, and formalized statements to facilitate future research. 
-              </p>
-            </div>
-          </div>
-        </div>
-        <!--/ Abstract. -->
-      </div>
-  <section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">    
-    <div style="background: #f8f9fa; border-radius: 1rem; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <h2 style="text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: #1f2937;">Key Achievements</h2>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">  
-        <div style="text-align: center;">
-          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
-            Improving</p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">+7.6%</p>
-          <p style="font-size: 0.875rem; color: #6b7280;"> over previous SOTA on miniF2F Pass@32 </p>
-        </div>
-        <div style="text-align: center;">
-          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
-            Ranking</p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">1st</p>
-          <p style="font-size: 0.875rem; color: #6b7280;">on the <a href="https://trishullab.github.io/PutnamBench/leaderboard.html" target="_blank">PutnamBench Leaderboard</a></p>
-        </div>
-        <div style="text-align: center;">
-          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
-            Solving</p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">1.9X</p>
-          <p style="font-size: 0.875rem; color: #6b7280;">total problems compared to prior works on Lean-workbook</p>
         </div>
       </div>
     </div>
   </section>
-  <section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-      <div style="flex: 0 0 40%; text-align: center;">
-        <figure>
-          <img src="static/images/minif2f_bar_plot.png" alt="miniF2F Performance"
-            style="width: 100%; height: auto; border-radius: 0.5rem;">
-          <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
-            Performance of Pass@32 for full proof generation on miniF2F
-          </figcaption>
-        </figure>
-      </div>
-      <div style="flex: 0 0 30%; text-align: center;">
-        <figure>
-          <img src="static/images/inference_scale_performance.png" alt="Inference Scale Performance"
-            style="width: 100%; height: auto; border-radius: 0.5rem;">
-          <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
-            Comparison across different inference budgets
-          </figcaption>
-        </figure>
-      </div>
-      <div style="flex: 0 0 23%; text-align: center;">
-        <figure>
-          <img src="static/images/leanworkbook_proofs_bar_plot.png" alt="Leanworkbook Proofs"
-            style="width: 100%; height: auto; border-radius: 0.5rem;">
-          <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
-            Number of problems solved in Lean-workbook
-          </figcaption>
-        </figure>
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Introduction</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce <strong>Goedel-Prover-V2</strong>, an open-source model series setting a new state-of-the-art in automated theorem proving. By building on a standard expert iteration and reinforcement learning pipeline, we introduce three key innovations: <strong>(1) scaffolding data synthesis</strong> to bridge the gap between simple and complex proofs, <strong>(2) compiler-guided self-correction</strong> to mimic human-like iterative refinement, and <strong>(3) model averaging</strong> to maintain diversity.
+            </p>
+            <p>
+              Our <strong>8B model matches the performance of models nearly 100x its size</strong>, and our <strong>32B model significantly outperforms all prior open-source and closed-source provers</strong>, establishing a new benchmark for what's possible in automated reasoning.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <figcaption style="font-size: 1rem; color: #6b7280;">
-    <p>
-      The Pass@N metric indicates that we generate N proofs for a single problem; if any one of these N proofs successfully solves the problem, it is considered solved. <strong>(Left)</strong>: The performance of Pass@32 for full proof generation on miniF2F. Due to limited compute, we compare with DeepSeek-Prover-v1.5 on the Pass@32 metric. <strong>(Middle)</strong>: This sub-figure presents a comparison of Goedel-Prover and Deepseek-Prover-v1.5 in terms of miniF2F performance across different inference budgets, ranging from Pass@32, 64, 128, ..., 4 × 6400, to 16 × 6400. <strong>(Right)</strong>: The number of problems solved in Lean-workbook by Goedel-Prover-SFT compared to prior works. InternLM2.5-Step-Prover and InternLM-Math-Plus collectively solve and open-source 15.7K samples, while we solve and open-source 29.7K samples.
-    </p>  
-    </figcaption>
+  </section>
 
-
-</section>
-
- 
+  <section class="section">
+    <div class="container is-max-desktop">
+        <div class="key-achievements">
+            <h2 class="title is-3 has-text-centered">Key Achievements</h2>
+            <div class="columns is-centered is-vcentered">
+                <div class="column achievement-item">
+                    <p class="icon"><i class="fas fa-trophy"></i></p>
+                    <h3>SOTA on MiniF2F</h3>
+                    <p>Our <strong>32B</strong> model achieves <strong>90.4%</strong> Pass@32 with self-correction. Our <strong>8B</strong> model matches the 671B DeepSeek-Prover.</p>
+                </div>
+                <div class="column achievement-item">
+                    <p class="icon"><i class="fas fa-chart-line"></i></p>
+                    <h3>#1 on PutnamBench</h3>
+                    <p>Our 32B model solves <strong>xxx problems</strong> (Pass@32), securing the top rank on the leaderboard and significantly outperforming the previous SOTA.</p>
+                </div>
+                <div class="column achievement-item">
+                    <p class="icon"><i class="fas fa-clipboard-list"></i></p>
+                    <h3>SOTA on FoMOBench</h3>
+                    <p>Solved <strong>60 problems</strong> on our new <strong>FoMOBench</strong>, a challenging benchmark of 360 Olympiad problems, surpassing all previous models.</p>
+                </div>
+            </div>
+        </div>
+    </div>
   </section>
 
   <section class="section" id="methodology">
-    <style>
-      .section {
-        padding: 4rem 0;
-        background-color: #f8f9fa;
-      }
-
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 40px;
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 3rem;
-        padding: 0 20px;
-      }
-
-      .section-title h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #1a1a1a;
-        margin-bottom: 1rem;
-      }
-
-      .section-title p {
-        font-size: 1.1rem;
-        color: #666;
-        max-width: 700px;
-        margin: 0 auto;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        padding: 20px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .card {
-        position: relative;
-        height: 250px;
-        perspective: 1000px;
-      }
-
-      .card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        cursor: pointer;
-      }
-
-      .card:hover .card-inner {
-        transform: rotateY(180deg);
-      }
-
-      .card-front,
-      .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        padding: 20px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .card-back {
-        transform: rotateY(180deg);
-        overflow-y: auto;
-      }
-
-      .icon {
-        font-size: 24px;
-        margin-right: 10px;
-      }
-
-      .card-title {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      .content ul,
-      .content ol {
-        padding-left: 20px;
-        list-style-position: outside;
-      }
-
-      .content li {
-        margin-bottom: 8px;
-      }
-
-      .detailed-content {
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .detailed-content h3 {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        font-weight: bold;
-        color: #2c3e50;
-      }
-
-      .detailed-content p {
-        margin-bottom: 10px;
-      }
-
-      .detailed-content ul {
-        padding-left: 20px;
-        margin-bottom: 15px;
-      }
-
-      /* Custom scrollbar for card back */
-      .card-back::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      .card-back::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 3px;
-      }
-
-      .card-back::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 3px;
-      }
-
-      .card-back::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
-
-      @media (max-width: 768px) {
-        .section {
-          padding: 2rem 0;
-        }
-
-        .cards {
-          grid-template-columns: 1fr;
-          padding: 10px;
-        }
-
-        .card {
-          height: 320px;
-        }
-
-        .container {
-          padding: 0 20px;
-        }
-
-        .section-title h2 {
-          font-size: 1.75rem;
-        }
-
-        .section-title p {
-          font-size: 1rem;
-        }
-      }
-
-      .figures-container {
-        display: flex;
-        /* Flexbox layout */
-        justify-content: center;
-        /* Center the images horizontally */
-        align-items: flex-start;
-        /* Align items at the top */
-        gap: 1.5rem;
-        /* Add gap between images */
-        max-width: 1000px;
-        /* Limit the total width of the container */
-        margin: 0 auto;
-        /* Center the container itself */
-        padding: 0 40px;
-      }
-
-      .figure {
-        background: white;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .figure-1 {
-        flex: 1;
-        /* Allow flexible width */
-        max-width: 30%;
-        /* Restrict maximum width */
-      }
-
-      .figure-2 {
-        flex: 1;
-        /* Allow flexible width */
-        max-width: 70%;
-        /* Restrict maximum width */
-      }
-
-      .figure img {
-        width: 100%;
-        /* Ensure images are responsive */
-        height: auto;
-        border-radius: 4px;
-      }
-
-      .figure-caption {
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-        color: #666;
-        text-align: center;
-      }
-
-      /* Responsive layout for smaller screens */
-      @media (max-width: 900px) {
-        .figures-container {
-          flex-direction: column;
-          /* Stack images vertically */
-          align-items: center;
-          /* Center images vertically */
-        }
-
-        .figure-1,
-        .figure-2 {
-          max-width: 100%;
-          /* Full width for smaller screens */
-        }
-      }
-    </style>
-
-    <div class="container">
-      <div class="section-title">
-        <h2>Methodology</h2>
-        <p>Large-scale data synthesis and iterative
-          training</p>
-      </div>
-
-      <div class="cards">
-        <!-- Statement Formalization Card -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-title">
-                <i class="fas fa-code icon" style="color: #3b82f6;"></i>
-                Statement Formalization
-              </div>
-              <div class="content">
-                Train two formalizers to formalize the statements.
-                <ul>                  
-                  
-                  <li><strong>Formalizer A:</strong> Trained on Lean workbook pairs</li>
-                  <li><strong>Formalizer B:</strong> Trained on 170K Claude-formalized statements</li>
-                  <li>Each problem receives multiple formalizations</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="detailed-content">
-                <h3>Detailed Process</h3>
-                <p>We train two distinct formalizers to enhance statement diversity:</p>
-                <p><strong>Formalizer A:</strong> Trained using Qwen2.5-Coder-32B on natural language and formal
-                  language pairs from Lean workbook.</p>
-                <p><strong>Formalizer B:</strong> Trained on 170K statements formalized by Claude-sonnet-3.5 and syntactically verified by Lean compiler.</p>
-                <p>Training completed in under 24 hours using 8 H100 GPUs. Each problem receives 16 total formalizations
-                  (8 from each formalizer).</p>
-              </div>
-            </div>
-          </div>
+    <div class="container is-max-desktop">
+        <div class="section-title has-text-centered">
+            <h2 class="title is-3">Our Methodology</h2>
+            <p>A cycle of data synthesis, iterative training, and novel refinement techniques.</p>
         </div>
-
-        <!-- Quality Assessment Card -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-title">
-                <i class="fas fa-check-circle icon" style="color: #22c55e;"></i>
-                Quality Assessment
-              </div>
-              <div class="content">
-                Assess and filter the formalized statements.
-                <ul>
-                  <li><strong>CC Test:</strong> Using LEAN compiler to verify syntax</li>
-                  <li><strong>FC Test:</strong> Using LLM as judge to verify accuracy and completeness</li>
-                </ul>
-              </div>
+        <div class="columns is-multiline is-centered">
+            <div class="column is-half">
+                <div class="method-card">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <p class="icon"><i class="fas fa-layer-group"></i></p>
+                        <h3>Scaffolding Data Synthesis</h3>
+                    </div>
+                    <p>To overcome data scarcity, we automatically generate intermediate problems. This creates a smoother difficulty curve, bridging the gap from simple lemmas to complex theorems and providing a denser training signal.</p>
+                </div>
             </div>
-            <div class="card-back">
-              <div class="detailed-content">
-                <h3>Compiling Correctness (CC) Test</h3>
-                <ul>
-                  <li>Ensures formalized statements follow Lean syntax</li>
-                  <li>Must successfully compile with placeholder ":= by sorry"</li>
-                </ul>
-                <h3>Faithfulness and Completeness (FC) Test</h3>
-                <ul>
-                  <li>Evaluates accuracy of problem translation</li>
-                  <li>Uses Qwen2.5-72B-Instruct for assessment</li>
-                  <li>Generates 4 independent judgments per statement</li>
-                  <li>Statements below 0.5 FC score are filtered out</li>
-                </ul>
-              </div>
+            <div class="column is-half">
+                <div class="method-card">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <p class="icon"><i class="fas fa-cogs"></i></p>
+                        <h3>Compiler-Guided Self-Correction</h3>
+                    </div>
+                    <p>Inspired by human problem-solving, we train the model to use feedback from the Lean compiler to iteratively correct its own proofs, integrating this task into both supervised fine-tuning and reinforcement learning.</p>
+                </div>
             </div>
-          </div>
+            <div class="column is-half">
+                <div class="method-card">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <p class="icon"><i class="fas fa-random"></i></p>
+                        <h3>Model Averaging</h3>
+                    </div>
+                    <p>To combat overfitting and loss of diversity in later training stages, we average trained checkpoints with the base model. This simple technique restores diversity and boosts Pass@K performance for larger K.</p>
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="method-card">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <p class="icon"><i class="fas fa-sync-alt"></i></p>
+                        <h3>Expert Iteration & RL</h3>
+                    </div>
+                    <p>We follow a proven pipeline: formalizing problems, generating and verifying proofs, and using the new, successful proofs to train the next generation of models, further enhanced by reinforcement learning.</p>
+                </div>
+            </div>
         </div>
-
-        <!-- Iterative Training Card -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-title">
-                <i class="fas fa-sync icon" style="color: #eab308;"></i>
-                Expert Iteration
-              </div>
-              <div class="content">
-                Perform expert iteration on the formalized statements.
-                <ol>
-                  <li>Generate 16 proof candidates per statement</li>
-                  <li>Verify correctness</li>
-                  <li>Collect verified proofs</li>
-                  <li>Train new model and repeat process</li>
-                </ol>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="detailed-content">
-                <h3>Training Process</h3>
-                <ul>
-                  <li>Uses DeepSeek-Prover-V1.5-RL for initial proof generation</li>
-                  <li>Generates 16 proofs per problem</li>
-                  <li>Compiles proofs to verify correctness</li>
-                  <li>Retains one correct proof per statement</li>
-                  <li>Trains new model (Prover-Iter-k) based on Deepseek-Prover-v1-Base with collected proofs</li>
-                  <li>Iteratively improves through multiple training cycles</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Data Scale Card -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-title">
-                <i class="fas fa-database icon" style="color: #ef4444;"></i>
-                Data Scale
-              </div>
-              <div class="content">
-                Statistics of the data scale.
-                <ul>
-                  <li>928K informal statements processed</li>
-                  <li>1.64M formalized statements</li>
-                  <li>140K Leanworkbook statements</li>
-                  <li><strong>Total: 1.78M formal statements</strong></li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="detailed-content">
-                <h3>Data Sources</h3>
-                <ul>
-                  <li>860K problems from Numina datasets</li>
-                  <li>68K private collection from Art of Problem Solving (AOPS)</li>
-                  <li>140K statements from Leanworkbook and Leanworkbook-plus</li>
-                </ul>
-                <h3>Formalization Results</h3>
-                <ul>
-                  <li>760K problems with dual formalizations (both Formalizer A and B)</li>
-                  <li>123K problems with single formalization</li>
-                  <li>Comprehensive coverage across different mathematical domains</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+  </section>
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Benchmark Performance</h2>
+        <figure class="results-figure">
+          <div class="columns is-centered is-vcentered">
+            <div class="column is-one-third">
+              <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/minif2f_bar_plot_rgb.png?raw=true" alt="MiniF2F Benchmark Performance">
+            </div>
+            <div class="column is-one-third">
+              <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/putnam_bar_plot_modified.png?raw=true" alt="PutnamBench Performance">
+            </div>
+            <div class="column is-one-third">
+              <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/fomobench_bar_plot_modified.png?raw=true" alt="FoMOBench Performance">
+            </div>
+          </div>
+          <figcaption>
+              <strong>Figure 1</strong>: <em>Pass@32 performance on MiniF2F, PutnamBench, and our new FoMOBench.</em>
+          </figcaption>
+        </figure>
+        <div class="content has-text-justified">
+            <p>
+                The charts above demonstrate the state-of-the-art performance of Goedel-Prover-V2. 
+                <strong>(Left)</strong> On the widely-used MiniF2F benchmark, our 8B model achieves 83.0%, matching much larger models, while our 32B model reaches 88.0% (90.4% with self-correction), outperforming all previous models.
+                <strong>(Middle)</strong> On the challenging PutnamBench, our 32B model solves 43 problems, a significant leap over the previous best of 23.
+                <strong>(Right)</strong> On our newly curated FoMOBench, which contains difficult Olympiad-level problems, our 32B model solves 60 problems, surpassing the prior SOTA of 50.
+            </p>
+        </div>
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <table class="table is-fullwidth is-striped leaderboard-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Model</th>
+                    <th>num-solved</th>
+                    <th>compute</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><strong>Goedel-Prover-V2-32B</strong></td><td><strong>xx</strong></td><td><strong>pass@32 + 2 rounds self-correction</strong></td></tr>
+                <tr><td>2</td><td>DeepSeek‑Prover‑V2-671B</td><td>47</td><td>pass@1024</td></tr>
+                <tr><td>3</td><td>DSP+</td><td>23</td><td>pass@128</td></tr>
+                <tr><td>4</td><td>Kimina‑Prover‑7B‑Distill</td><td>10</td><td>pass@192</td></tr>
+            </tbody>
+        </table>
+        <figcaption class="has-text-centered">
+            <strong>Table 1</strong>: <em>PutnamBench leaderboard. Goedel-Prover-V2-32B secures the top rank with significantly less compute than the previous SOTA. Note that DeepSeek-Prover-V2-671B's score of 47 was achieved with a much larger sample budget (pass@1024).</em>
+        </figcaption>
+    </div>
   </section>
 
-  <!-- Results Section -->
-  <section class="results-section">
-    <style>
-      .goedel-row {
-        font-weight: bold;
-      }
-
-      .results-section {
-        padding: 4rem 2rem;
-        background: #f8f9fa;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      .results-container {
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 2rem;
-        color: #2c3e50;
-        font-size: 2rem;
-        font-weight: bold;
-      }
-
-      .subsection-title {
-        color: #2c3e50;
-        font-size: 1.5rem;
-        margin: 2rem 0 1rem;
-        font-weight: 600;
-      }
-
-      .table-container {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 2rem;
-        overflow: hidden;
-      }
-
-      .table-container table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      .table-container th {
-        background-color: white;
-        padding: 12px 15px;
-        text-align: left;
-        font-weight: bold;
-        border-bottom: 2px solid #eee;
-      }
-
-      .table-container td {
-        padding: 12px 15px;
-        text-align: left;
-      }
-
-      .block-1 {
-        background-color: #fff0f5;
-        /* 浅粉色 */
-      }
-
-      .block-2 {
-        background-color: #f0f8ff;
-        /* 浅蓝色 */
-      }
-
-      .block-3 {
-        background-color: #f0fff0;
-        /* 浅绿色 */
-      }
-
-      .highlight {
-        color: #2980b9;
-        font-weight: bold;
-      }
-
-      .table-container table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      .table-container th,
-      .table-container td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid #e1e1e1;
-      }
-
-      .table-container th {
-        background-color: #f8f9fa;
-        font-weight: bold;
-        color: #2c3e50;
-      }
-
-      .highlight {
-        color: #2980b9;
-        font-weight: bold;
-      }
-
-      .subtitle {
-        text-align: center;
-        color: #666;
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-      }
-
-      .description {
-        margin: 1.5rem 0;
-        line-height: 1.8;
-        color: #444;
-      }
-
-      .diamond-green {
-        color: #22c55e;
-      }
-
-      .diamond-black {
-        color: #000;
-      }
-
-      .multirow {
-        vertical-align: middle;
-      }
-
-      @media (max-width: 768px) {
-        .results-section {
-          padding: 2rem 1rem;
-        }
-
-        .table-container th,
-        .table-container td {
-          padding: 8px;
-          font-size: 0.9rem;
-        }
-
-        .table-container {
-          overflow-x: auto;
-        }
-      }
-
-      .key-findings {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        margin-top: 3rem;
-      }
-
-      .key-findings h3 {
-        color: #2c3e50;
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-        font-weight: 600;
-        border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 0.5rem;
-      }
-
-      .key-findings ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .key-findings li {
-        margin-bottom: 1rem;
-        padding-left: 1.5rem;
-        position: relative;
-        line-height: 1.6;
-        color: #4a5568;
-      }
-
-      .key-findings li:before {
-        content: "•";
-        color: #3b82f6;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-        font-size: 1.2em;
-      }
-
-      @media (max-width: 768px) {
-        .key-findings {
-          padding: 1.5rem;
-        }
-      }
-
-      .figures-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        margin: 2rem 0;
-        justify-content: center;
-      }
-
-      .figure-wrapper {
-        flex: 1;
-        min-width: 300px;
-        max-width: 500px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 1rem;
-      }
-
-      .figure-wrapper img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .figure-caption {
-        text-align: center;
-        color: #4a5568;
-        margin-top: 1rem;
-        font-size: 0.9rem;
-      }
-
-      @media (max-width: 768px) {
-        .figure-wrapper {
-          flex: 1 1 100%;
-        }
-      }
-    </style>
-
-    <div class="results-container">
-      <h2 class="section-title">Experimental Results</h2>
-
-      <h3 class="subsection-title">Benchmarks</h3>
-      <div class="description">
-        <p>Following previous works, we primarily use miniF2F as our main evaluation benchmark. Additionally, we track
-          performance on ProofNet, Lean-workbook, and FormalNumina. Lean-workbook contains 140K statements in total. FormalNumina is a private test set created by formalizing a randomly sampled collection of 250 problems from Numina. The benchmarks represent a
-          diverse range of mathematical problems, from high-school level to undergraduate mathematics.</p>
-      </div>
-
-
-      <h3 class="subsection-title">Main Results</h3>
-      <!-- Full Proof Generation Results -->
-      <div class="table-container">
-        <h3 class="subtitle">Table 2: Full Proof Generation Performance on miniF2F</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>Pass</th>
-              <th>Performance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Block 1 - Pass@32/128 -->
-            <tr class="block-1">
-              <td>TheoremLamma</td>
-              <td>128</td>
-              <td>33.6%</td>
-            </tr>
-            <tr class="block-1">
-              <td>Deepseek-Prover-v1</td>
-              <td>32</td>
-              <td>46.1% ± 0.5%</td>
-            </tr>
-            <tr class="block-1">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>32</td>
-              <td>48.2% ± 0.6%</td>
-            </tr>
-            <tr class="block-1">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>32</td>
-              <td>50.0% ± 0.5%</td>
-            </tr>
-            <tr class="block-1 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>32</td>
-              <td class="highlight">57.6% ± 0.7%</td>
-            </tr>
-
-            <!-- Block 2 - Pass@3200 -->
-            <tr class="block-2">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>3200</td>
-              <td>53.3%</td>
-            </tr>
-            <tr class="block-2">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>3200</td>
-              <td>54.9%</td>
-            </tr>
-            <tr class="block-2 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>3200</td>
-              <td class="highlight">62.7%</td>
-            </tr>
-
-            <!-- Block 3 - Pass@4×6400 -->
-            <tr class="block-3">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>4×6400</td>
-              <td>55.8%</td>
-            </tr>
-            <tr class="block-3">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>4×6400</td>
-              <td>58.5%</td>
-            </tr>
-            <tr class="block-3 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>4×6400</td>
-              <td class="highlight">64.7%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="description">
-        <p>Our Goedel-Prover-SFT achieves state-of-the-art performance on miniF2F, surpassing previous models by
-          significant margins. The model shows consistent improvement across different computational budgets, achieving
-          57.6% at Pass@32, 62.7% at Pass@3200, and 64.7% at Pass@4×6400.</p>
-      </div>
-
-      <!-- Multiple Dataset Performance -->
-      <div class="table-container">
-        <h3 class="subtitle">Table 3: Performance Comparison Across Different Datasets</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>miniF2F</th>
-              <th>ProofNet</th>
-              <th>FormalNumina</th>
-              <th>Lean-workbook</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>50.0%</td>
-              <td class="highlight">16.0%</td>
-              <td>54.0%</td>
-              <td>14.7%</td>
-            </tr>
-            <tr class="goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td class="highlight">57.6% (+7.6)</td>
-              <td>15.2% (-0.8)</td>
-              <td class="highlight">61.2% (+7.2)</td>
-              <td class="highlight">21.2% (+6.5)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="description">
-        <p>The model demonstrates strong performance across multiple datasets, with notable improvements in miniF2F,
-          FormalNumina, and Lean-workbook benchmarks. While performance on ProofNet shows a slight decrease, the overall
-          average performance shows a significant improvement of 5.4 percentage points.</p>
-      </div>
-
-      <!-- PutnamBench Results -->
-      <div class="table-container">
-        <h3 class="subtitle">Table 4: Number of Problems Solved on PutnamBench (out of 644)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Ranking</th>
-              <th>Model</th>
-              <th>Type</th>
-              <th>Num-solved</th>
-              <th>Compute (Pass)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="goedel-row">
-              <td>1</td>
-              <td>Goedel-Prover-SFT <span class="diamond-green">♦</span></td>
-              <td>Whole Proof Generation</td>
-              <td>7</td>
-              <td>512</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>ABEL  </td>
-              <td>Tree Search Method</td>
-              <td>7</td>
-              <td>596</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Goedel-Prover-SFT <span class="diamond-green">♦</span></td>
-              <td>Whole Proof Generation</td>
-              <td>6</td>
-              <td>32</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>InternLM2.5-StepProver <span class="diamond-green">♦</span></td>
-              <td>Tree Search Method</td>
-              <td>6</td>
-              <td>2×32×600</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>InternLM 7B</td>
-              <td>Whole Proof Generation</td>
-              <td>4</td>
-              <td>4096</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>GPT-4o  </td>
-              <td>Whole Proof Generation</td>
-              <td>1</td>
-              <td>10</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>COPRA (GPT-4o) <span class="diamond-green">♦</span></td>
-              <td>Whole Proof Generation</td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>ReProver w/ retrieval <span class="diamond-green">♦</span></td>
-              <td>Tree Search Method</td>
-              <td>0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>ReProver w/o retrieval <span class="diamond-green">♦</span></td>
-              <td>Tree Search Method</td>
-              <td>0</td>
-              <td>1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="description">
-        <p>On the challenging PutnamBench dataset, Goedel-Prover-SFT achieves new state-of-the-art performance, solving 7 out of 644 problems with Pass@512, ranking the first place at the <a href="https://trishullab.github.io/PutnamBench/leaderboard.html" target="_blank">Putnam Leaderboard</a>. <span class="diamond-green">♦</span></td> indicates a open-source model.</p>
-      </div>
-
-      <h3 class="subsection-title">Iterative Training Details</h3>
-      <!-- Iterative Training Details -->
-      Given a set of formalized statements, we start by employing DeepSeek-Prover-V1.5-RL to generate 16 proofs for each problem. We evaluate these proofs and retain one valid proof per statement. Using this curated collection, we conduct supervised fine-tuning (SFT) on DeepSeek-Prover-V1.5-Base, resulting in Prover-Iter-1. This iterative process continues, with each version, Prover-Iter-k, generating new answers and training the model for subsequent iterations. Importantly, Prover-Iter-k is trained based on the proofs collected from the previous iteration, Prover-Iter-(k-1).
-
-      Additionally, we gradually increase the number of statements throughout the iterative training process. Starting from Iteration 6, we also incorporate Mathlib into the training data. The details of the data statistics for each iteration are presented in the table below.
-
-      <div class="table-container">
-        <h3 class="subtitle">Table 6: Iterative Training Details</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Iteration</th>
-              <th colspan="2">Statements</th>
-              <th colspan="3">Training Data</th>
-            </tr>
-            <tr>
-              <th></th>
-              <th>Lean-workbook</th>
-              <th>Formalized Statements</th>
-              <th>Lean-workbook Solved</th>
-              <th>Formalized Proofs</th>
-              <th>Mathlib</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Iter-0</td>
-              <td>140K</td>
-              <td>0</td>
-              <td>20.6K</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-1</td>
-              <td>140K</td>
-              <td>140K</td>
-              <td>20.6K</td>
-              <td>72.4K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-2</td>
-              <td>140K</td>
-              <td>270K</td>
-              <td>23.0K</td>
-              <td>128.7K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-3</td>
-              <td>140K</td>
-              <td>270K</td>
-              <td>24.4K</td>
-              <td>161.2K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-4</td>
-              <td>140K</td>
-              <td>882K</td>
-              <td>25.4K</td>
-              <td>425.8K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-5</td>
-              <td>140K</td>
-              <td>882K</td>
-              <td>27.0K</td>
-              <td>436.5K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-6</td>
-              <td>140K</td>
-              <td>882K</td>
-              <td>27.8K</td>
-              <td>443.2K</td>
-              <td>104K</td>
-            </tr>
-            <tr>
-              <td>Iter-7</td>
-              <td>140K</td>
-              <td>1.64M</td>
-              <td>28.8K</td>
-              <td>887.7K</td>
-              <td>104K</td>
-            </tr>
-            <tr>
-              <td>Iter-8</td>
-              <td>140K</td>
-              <td>1.64M</td>
-              <td>29.7K</td>
-              <td>915.7K</td>
-              <td>104K</td>
-            </tr>
-            <tr>
-              <td>Iter-9</td>
-              <td>140K</td>
-              <td>1.64M</td>
-              <td>30.3K</td>
-              <td>928.2K</td>
-              <td>104K</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="description">
-        <p> The model's performance across four datasets during iterative training is shown below. </p>
-      </div>
-
-      <div class="figures-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; justify-items: center;">
-        <div class="figure-wrapper" style="text-align: center;">
-          <img src="static/images/YongUpdate/minif2f_iteration/minif2f_iteration-1.png" alt="Performance on miniF2F and Held-out datasets" style="max-width: 80%; height: auto;">
-          <div class="figure-caption">
-            Figure 1: Iterative Performance on miniF2F
+  <section class="section" style="background-color: #fafafa;">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Compelling Scaling Performance</h2>
+        <figure class="results-figure">
+          <div class="columns is-centered is-vcentered">
+            <div class="column is-half">
+              <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/inference_scale_performance.png?raw=true" alt="Inference Scale Performance">
+            </div>
+            <div class="column is-half">
+              <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/inference_scale_performance_compute_adjusted.png?raw=true" alt="Inference Scale Performance Compute Adjusted">
+            </div>
           </div>
+          <figcaption>
+              <strong>Figure 2</strong>: <em>Performance on MiniF2F test set under different sample budgets.</em>
+          </figcaption>
+        </figure>
+        <div class="content has-text-justified">
+            <p>
+                The scaling curves highlight our models' efficiency and effectiveness.
+                <strong>(Left)</strong> The raw performance (Pass@K) shows that both our 8B and 32B models consistently improve as the number of samples (K) increases, demonstrating robust problem-solving capability.
+                <strong>(Right)</strong> The compute-adjusted performance plot further reveals that our models are highly efficient, achieving strong results even at lower compute budgets compared to other models. This underscores the effectiveness of our training methodology.
+            </p>
         </div>
-        <div class="figure-wrapper" style="text-align: center;">
-          <img src="static/images/YongUpdate/FormalNumina_iteration/FormalNumina_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
-          <div class="figure-caption">
-            Figure 2: Iterative Performance on FormalNumina
-          </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Model & Dataset Downloads</h2>
+        <p class="has-text-centered mb-5">We release our Goedel-Prover-V2 models and the new FoMOBench benchmark to foster future research.</p>
+        <div class="columns">
+            <div class="column">
+                <h4 class="title is-4 has-text-centered">Models</h4>
+                <table class="table is-fullwidth downloads-table">
+                    <thead>
+                        <tr><th>Model</th><th>Download</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Goedel-Prover-V2-32B</td><td><a href="https://huggingface.co/Goedel-LM/Goedel-Prover-V2-32B" target="_blank">🤗 HuggingFace</a></td></tr>
+                        <tr><td>Goedel-Prover-V2-8B</td><td><a href="https://huggingface.co/Goedel-LM/Goedel-Prover-V2-8B" target="_blank">🤗 HuggingFace</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column">
+                <h4 class="title is-4 has-text-centered">Dataset</h4>
+                <table class="table is-fullwidth downloads-table">
+                    <thead>
+                        <tr><th>Dataset</th><th>Download</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>FoMOBench</td><td><a href="https://huggingface.co/datasets/Goedel-LM/FoMOBench" target="_blank">🤗 HuggingFace</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="figure-wrapper" style="text-align: center;">
-          <img src="static/images/YongUpdate/ProofNet_iteration/ProofNet_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
-          <div class="figure-caption">
-            Figure 3: Iterative Performance on ProofNet
-          </div>
-        </div>
-        <div class="figure-wrapper" style="text-align: center;">
-          <img src="static/images/YongUpdate/Lean-workbook_iteration/Lean-workbook_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
-          <div class="figure-caption">
-            Figure 4: Iterative Performance on Lean-workbook
-          </div>
-        </div>
-      </div>
-      <div class="description">
-        <p>The performance trends illustrated in Figures 1-4 demonstrate the consistent improvement of our model
-          across different datasets during the iterative training process.</p>
-      </div>
-
-      <!-- Key Findings -->
-      <div class="key-findings">
-        <h3>Key Findings</h3>
-        <ul>
-          <li>Achieving state-of-the-art performance of 57.6% on miniF2F at Pass@32</li>
-          <li>Ranking the 1st on the PutnamBench Leaderboard with 7 problems solved out of 644 with Pass@512</li>
-          <li>Cumulatively solving 29.7K problems in Lean-workbook. We significantly increase the 15.7K proofs found by prior works.</li>
-          <li>Iterative training process demonstrates consistent improvement in model performance</li>
-        </ul>
-      </div>
     </div>
   </section>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title is-3 has-text-centered">BibTeX</h2>
-      <pre><code>
-        @misc{lin2025goedelproverfrontiermodelopensource,
-          title={Goedel-Prover: A Frontier Model for Open-Source Automated Theorem Proving}, 
-          author={Yong Lin and Shange Tang and Bohan Lyu and Jiayun Wu and Hongzhou Lin and Kaiyu Yang and Jia Li and Mengzhou Xia and Danqi Chen and Sanjeev Arora and Chi Jin},
-          year={2025},
-          eprint={2502.07640},
-          archivePrefix={arXiv},
-          primaryClass={cs.LG},
-          url={https://arxiv.org/abs/2502.07640}, 
-        }
-    </code></pre>
+      <h2 class="title is-3 has-text-centered">Citation</h2>
+      <pre><code>@misc{lin2025goedelproverv2,
+    title={Goedel-Prover-V2: The Strongest Open-Source Theorem Prover to Date},
+    author={Yong Lin and Shange Tang and Bohan Lyu and Ziran Yang and Jui-Hui Chung and Haoyu Zhao and Lai Jiang and Yihan Geng and Jiawei Ge and Jingruo Sun and Jiayun Wu and Jiri Gesi and David Acuna and Kaiyu Yang and Hongzhou Lin and Yejin Choi and Danqi Chen and Sanjeev Arora and Chi Jin},
+    year={2025}
+}</code></pre>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            Lastest update at 2025-02-12. This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a
-              href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
-              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-              Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-        </div>
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          This website template was adapted from <a href="https://nerfies.github.io/">Nerfies</a>.
+        </p>
       </div>
     </div>
   </footer>
