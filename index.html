@@ -314,7 +314,7 @@ s<!DOCTYPE html>
           <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">
             <strong style="color: #ef4444;"> 8B > 671B</strong></p>
           <p style="font-size: 0.875rem; color: #6b7280;">
-            Our 8B model better than the 671B DeepSeek-Prover on miniF2F Pass@32 .</p>
+            Our 8B model is better than the 671B DeepSeek-Prover on miniF2F Pass@32.</p>
         </div>
         
         
@@ -343,6 +343,9 @@ s<!DOCTYPE html>
             </p>
             <p>
               Our small model, Goedel-Prover-V2-8B, reaches 83.0% on MiniF2F test set at Pass@32, matching the performance of DeepSeek-Prover-V2-671B while being nearly 100 times smaller in model size.  Our flagship model, Goedel-Prover-V2-32B, achieves 88.0% on MiniF2F at Pass@32 and 90.4% with additional two rounds of self-correction (only increasing max output length from 32K to 40K), outperforming prior SOTA DeepSeek-Prover-V2-671B and concurrent work Kimina-Prover-72B by a large margin. Additionaly, Goedel-Prover-V2-32B solves 57 problems on PutnamBench with 32 sample budget and 2 rounds of self-correction per sample, securing the 1st on the leaderboard by beating DeepSeek-Prover-V2-671B's 47 by doing Pass@1024.
+            </p>
+            <p>
+              This model is being released to aid other open-source projects, including those geared towards the upcoming IMO competition. A full paper with all details will be released in the coming weeks.
             </p>
           </div>
         </div>
@@ -519,7 +522,7 @@ s<!DOCTYPE html>
       <h2 class="title is-3 has-text-centered">Citation</h2>
       <pre><code>@misc{lin2025goedelproverv2,
     title={Goedel-Prover-V2: The Strongest Open-Source Theorem Prover to Date},
-    author={Yong Lin and Shange Tang and Bohan Lyu and Ziran Yang and Jui-Hui Chung and Haoyu Zhao and Hongzhou Lin and Lai Jiang and Yihan Geng and Jiawei Ge and Jingruo Sun and Jiayun Wu and Jiri Gesi and David Acuna and Kaiyu Yang  and Yejin Choi and Danqi Chen and Sanjeev Arora and Chi Jin},
+    author={Yong Lin and Shange Tang and Bohan Lyu and Ziran Yang and Jui-Hui Chung and Haoyu Zhao  and Lai Jiang and Yihan Geng and Jiawei Ge and Jingruo Sun and Jiayun Wu and Jiri Gesi and David Acuna and Kaiyu Yang and Hongzhou Lin  and Yejin Choi and Danqi Chen and Sanjeev Arora and Chi Jin},
     year={2025}
 }</code></pre>
     </div>
