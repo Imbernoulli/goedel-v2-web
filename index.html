@@ -284,28 +284,15 @@
       </div>
     </div>
   </section>
-  
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Introduction</h2>
-          <div class="content has-text-justified">
-            <p>
-              We introduce <strong>Goedel-Prover-V2</strong>, an open-source model series setting a new state-of-the-art in automated theorem proving. By building on a standard expert iteration and reinforcement learning pipeline, we introduce three key innovations: <strong>(1) scaffolding data synthesis</strong> to bridge the gap between simple and complex proofs, <strong>(2) compiler-guided self-correction</strong> to mimic human-like iterative refinement, and <strong>(3) model averaging</strong> to maintain diversity.
-            </p>
-            <p>
-              Our <strong>8B model matches the performance of models nearly 100x its size</strong>, and our <strong>32B model significantly outperforms all prior open-source and closed-source provers</strong>, establishing a new benchmark for what's possible in automated reasoning.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  <br><br><br>
 
   <section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">
+    <div class="columns is-centered has-text-centered"> <h2 class="title is-3">Key Achievements</h2></div>
+   
+    <!-- <h2 style="text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: #1f2937;">Key Achievements</h2> -->
     <div style="background: #f8f9fa; border-radius: 1rem; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <h2 style="text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: #1f2937;">Key Achievements</h2>
+      
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">  
         
         <div>
@@ -338,51 +325,22 @@
       </div>
     </div>
   </section>
-
-  <section class="section" id="methodology">
+  
+  <section class="section">
     <div class="container is-max-desktop">
-        <div class="section-title has-text-centered">
-            <h2 class="title is-3">Our Methodology</h2>
-            <p>A cycle of data synthesis, iterative training, and novel refinement techniques.</p>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Introduction</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce <strong>Goedel-Prover-V2</strong>, an open-source model series setting a new state-of-the-art in automated theorem proving. By building on a standard expert iteration and reinforcement learning pipeline, we introduce three key innovations: <strong>(1) scaffolding data synthesis</strong> to bridge the gap between simple and complex proofs, <strong>(2) compiler-guided self-correction</strong> to mimic human-like iterative refinement, and <strong>(3) model averaging</strong> to maintain diversity.
+            </p>
+            <p>
+              Our <strong>8B model matches the performance of models nearly 100x its size</strong>, and our <strong>32B model significantly outperforms all prior open-source and closed-source provers</strong>, establishing a new benchmark for what's possible in automated reasoning.
+            </p>
+          </div>
         </div>
-        <div class="columns is-multiline is-centered">
-            <div class="column is-half">
-                <div class="method-card">
-                    <div class="is-flex is-align-items-center mb-3">
-                        <p class="icon"><i class="fas fa-layer-group"></i></p>
-                        <h3>Scaffolding Data Synthesis</h3>
-                    </div>
-                    <p>To overcome data scarcity, we automatically generate intermediate problems. This creates a smoother difficulty curve, bridging the gap from simple lemmas to complex theorems and providing a denser training signal.</p>
-                </div>
-            </div>
-            <div class="column is-half">
-                <div class="method-card">
-                    <div class="is-flex is-align-items-center mb-3">
-                        <p class="icon"><i class="fas fa-cogs"></i></p>
-                        <h3>Compiler-Guided Self-Correction</h3>
-                    </div>
-                    <p>Inspired by human problem-solving, we train the model to use feedback from the Lean compiler to iteratively correct its own proofs, integrating this task into both supervised fine-tuning and reinforcement learning.</p>
-                </div>
-            </div>
-            <div class="column is-half">
-                <div class="method-card">
-                    <div class="is-flex is-align-items-center mb-3">
-                        <p class="icon"><i class="fas fa-random"></i></p>
-                        <h3>Model Averaging</h3>
-                    </div>
-                    <p>To combat overfitting and loss of diversity in later training stages, we average trained checkpoints with the base model. This simple technique restores diversity and boosts Pass@K performance for larger K.</p>
-                </div>
-            </div>
-            <div class="column is-half">
-                <div class="method-card">
-                    <div class="is-flex is-align-items-center mb-3">
-                        <p class="icon"><i class="fas fa-sync-alt"></i></p>
-                        <h3>Expert Iteration & RL</h3>
-                    </div>
-                    <p>We follow a proven pipeline: formalizing problems, generating and verifying proofs, and using the new, successful proofs to train the next generation of models, further enhanced by reinforcement learning.</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
   </section>
   
@@ -489,6 +447,53 @@
                         <tr><td>FoMOBench</td><td><a href="https://huggingface.co/datasets/Goedel-LM/FoMOBench" target="_blank">🤗 HuggingFace</a></td></tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section" id="methodology">
+    <div class="container is-max-desktop">
+        <div class="section-title has-text-centered">
+            <h2 class="title is-3">Our Methodology</h2>
+            <p>A cycle of data synthesis, iterative training, and novel refinement techniques.</p>
+        </div>
+        <div class="columns is-multiline is-centered">
+            <div class="column is-half">
+                <div class="method-card">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <p class="icon"><i class="fas fa-layer-group"></i></p>
+                        <h3>Scaffolding Data Synthesis</h3>
+                    </div>
+                    <p>To overcome data scarcity, we automatically generate intermediate problems. This creates a smoother difficulty curve, bridging the gap from simple lemmas to complex theorems and providing a denser training signal.</p>
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="method-card">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <p class="icon"><i class="fas fa-cogs"></i></p>
+                        <h3>Compiler-Guided Self-Correction</h3>
+                    </div>
+                    <p>Inspired by human problem-solving, we train the model to use feedback from the Lean compiler to iteratively correct its own proofs, integrating this task into both supervised fine-tuning and reinforcement learning.</p>
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="method-card">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <p class="icon"><i class="fas fa-random"></i></p>
+                        <h3>Model Averaging</h3>
+                    </div>
+                    <p>To combat overfitting and loss of diversity in later training stages, we average trained checkpoints with the base model. This simple technique restores diversity and boosts Pass@K performance for larger K.</p>
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="method-card">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <p class="icon"><i class="fas fa-sync-alt"></i></p>
+                        <h3>Expert Iteration & RL</h3>
+                    </div>
+                    <p>We follow a proven pipeline: formalizing problems, generating and verifying proofs, and using the new, successful proofs to train the next generation of models, further enhanced by reinforcement learning.</p>
+                </div>
             </div>
         </div>
     </div>
