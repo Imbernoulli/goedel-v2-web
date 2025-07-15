@@ -354,22 +354,23 @@
         <h2 class="title is-3 has-text-centered">Benchmark Performance</h2>
         <figure class="results-figure">
           <div class="columns is-centered is-vcentered">
-            <div class="column is-one-third">
-              <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/minif2f_bar_plot_rgb.png?raw=true" alt="MiniF2F Benchmark Performance">
+            <div class="column"> 
+              <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/minif2f_bar_plot_rgb.png?raw=true" alt="MiniF2F Benchmark Performance"
+              style="width: 400px; height: auto; object-fit: contain;">
             </div>
-            <div class="column is-one-third">
+            <div class="column">
               <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/putnam_bar_plot_modified.png?raw=true" 
               alt="PutnamBench Performance"
-              style="width: 450px; height: auto; object-fit: contain;">
+              style="width: 250px; height: auto; object-fit: contain;">
             </div>
-            <div class="column is-one-third">
+            <div class="column">
               <img src="https://github.com/Goedel-LM/Goedel-Prover-V2/blob/main/assets/fomobench_bar_plot_modified.png?raw=true" 
               alt="FoMOBench Performance"
-              style="width: 100%; max-width: 220px;">
+              style="width: 230px; height: auto; object-fit: contain;">
             </div>
           </div>
           <figcaption>
-              <strong>Figure 1</strong>: <em>Pass@32 performance on MiniF2F, PutnamBench, and our new FoMOBench.</em>
+              <strong>Figure 1</strong>: <em>Pass@32 performance on MiniF2F, PutnamBench, and our new FoMOBench containing 360 Olympiad math problems.</em>
           </figcaption>
         </figure>
         <div class="content has-text-justified">
@@ -386,13 +387,15 @@
                 <tr>
                     <th>#</th>
                     <th>Model</th>
-                    <th>num-solved</th>
-                    <th>compute</th>
+                    <th>Num-solved</th>
+                    <th>Pass</th>
                 </tr>
             </thead>
             <tbody>
+                <tr><td>1</td><td><strong>Goedel-Prover-V2-32B (self-correction)</strong></td><td><strong>64</strong></td><td><strong>Pass@64</strong></td></tr>
                 <tr><td>1</td><td><strong>Goedel-Prover-V2-32B (self-correction)</strong></td><td><strong>57</strong></td><td><strong>Pass@32</strong></td></tr>
                 <tr><td>2</td><td>DeepSeek‑Prover‑V2-671B</td><td>47</td><td>pass@1024</td></tr>
+                <tr><td>2</td><td>DeepSeek‑Prover‑V2-671B</td><td>22</td><td>pass@32</td></tr>
                 <tr><td>3</td><td>DSP+</td><td>23</td><td>pass@128</td></tr>
                 <tr><td>4</td><td>Kimina‑Prover‑7B‑Distill</td><td>10</td><td>pass@192</td></tr>
             </tbody>
